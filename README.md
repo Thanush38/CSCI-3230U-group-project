@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Lab 03 - Project Milestone 1: Proposal & Static Prototype
 
 **Week 4 - worth 8% of your final grade - group milestone**
@@ -59,6 +58,3 @@ This is the first milestone (m1) of your group project. By now you should have a
 | **Presentation** - clear, all members participate | 2% |
 
 > **AI policy:** this milestone allows AI for learning only - explanations, error messages, no AI-generated code. See `project/ai-policy.md`.
-=======
-Proposal
->>>>>>> 8673b329f22f78ca3974dd94c03127624d9bfdb3
