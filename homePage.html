@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Workout Builder</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1 id="Title">Workout Builder</h1>
+            <nav>
+                <a href="homePage.html">Home</a>
+                <a href="workoutPlanner.html">Workout Planner</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="search-section">
+                <h2>Find an Exercise</h2>
+                <form>
+                    <label for="search">Search</label>
+                    <input type="search" id="search" name="search" placeholder="Search exercises...">
+
+                    <label for="muscle">Muscle Group</label>
+                    <select id="muscle" name="muscle">
+                        <option value="">All</option>
+                        <option value="chest">Chest</option>
+                        <option value="back">Back</option>
+                        <option value="legs">Legs</option>
+                        <option value="shoulders">Shoulders</option>
+                        <option value="arms">Arms</option>
+                        <option value="core">Core</option>
+                    </select>
+
+                    <button type="submit">Search</button>
+                </form>
+            </section>
+
+            <section id="exercises">
+                <h2>Exercises</h2>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Push-Up</h3>
+                    <p>Muscle Group: Chest</p>
+                    <p>A bodyweight press that works the chest, shoulders, and triceps.</p>
+                </article>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Bench Press</h3>
+                    <p>Muscle Group: Chest</p>
+                    <p>A barbell press performed lying on a bench to build chest strength.</p>
+                </article>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Pull-Up</h3>
+                    <p>Muscle Group: Back</p>
+                    <p>Hang from a bar and pull your chin over it to target the lats.</p>
+                </article>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Bent-Over Row</h3>
+                    <p>Muscle Group: Back</p>
+                    <p>Hinge at the hips and row a barbell toward your torso.</p>
+                </article>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Bodyweight Squat</h3>
+                    <p>Muscle Group: Legs</p>
+                    <p>A foundational lower-body move for quads, glutes, and hamstrings.</p>
+                </article>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Deadlift</h3>
+                    <p>Muscle Group: Legs</p>
+                    <p>Lift a loaded barbell from the floor using your hips and legs.</p>
+                </article>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Overhead Press</h3>
+                    <p>Muscle Group: Shoulders</p>
+                    <p>Press a barbell or dumbbells overhead to build strong shoulders.</p>
+                </article>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Bicep Curl</h3>
+                    <p>Muscle Group: Arms</p>
+                    <p>Curl a pair of dumbbells to isolate the biceps.</p>
+                </article>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Tricep Dips</h3>
+                    <p>Muscle Group: Arms</p>
+                    <p>Lower and raise your body between parallel bars or a bench.</p>
+                </article>
+
+                <article class="card">
+                    <img src="workout-placeholder.svg" alt="Placeholder workout image">
+                    <h3>Plank</h3>
+                    <p>Muscle Group: Core</p>
+                    <p>Hold a straight-body position to build core stability.</p>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
