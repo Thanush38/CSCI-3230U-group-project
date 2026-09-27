@@ -51,3 +51,15 @@ We will be using the following fields from the API response in our application:
 | `bodyParts` | Filtering and grouping exercises for workout plans |
 | `equipments` | Detail page and equipment filter |
 | `instructions` | Step-by-step list on the detail page |
+
+#### Comparators
+
+#### Comparators
+
+| App | Site | What it does |
+| --- | --- | --- |
+| MuscleWiki | https://musclewiki.com/ | An interactive site where you click a muscle group to see videos of exercises that target it. Its core library is free, but many features are behind a paid premium subscription. |
+| ExRx.net | https://exrx.net/ | A reference site with over 2,100 exercises organized by muscle group and the equipment you have available. |
+| Muscle & Strength | https://www.muscleandstrength.com/ | A reference site where you can browse exercises and instructions for each muscle group, along with pre written workout programs. |
+
+Our site is completely free, with no subscriptions or paid features. On top of letting users target the muscles they want, it also tells them which parts of their body they are neglecting, based on the workouts it creates for them. Users can also pick a physique or fitness goal, such as calisthenics, a bigger back, a bigger chest, or a pull-up target, and follow a plan built to reach it. None of these sites combines a workout builder with this kind of goal-based, personalized guidance.
