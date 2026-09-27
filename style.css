@@ -144,3 +144,14 @@ button:hover {
     margin-bottom: 0;
     color: #1f2933;
 }
+
+.exercise-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.exercise-link:hover {
+    .card {
+        background: #dcdcdc;
+    }
+}
