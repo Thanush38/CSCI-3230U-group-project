@@ -1,14 +1,21 @@
-// There is an issue with this api (free version) -> need alternative
-const API_Key = "wx_484fbaebd972b6cf741a14c074c2219917ef19dac4f596cd01f1fd85";
-
-fetch("https://api.workoutxapp.com/v1/workout/generate", {
-    headers: {
-        "X-WorkoutX-Key": API_Key
-    }
-})
+fetch("https://oss.exercisedb.dev/api/v1/exercises")
 .then(response => response.json())
 .then(data => {
     console.log(data);
+
+    const exercisesContainer = document.getElementById("exercises");
+
+        data.data.forEach(exercise => {
+            const exerciseElement = document.createElement("div");
+
+            exerciseElement.innerHTML = `<h2>${exercise.name}</h2>
+                                        <p><b>Target Muscles:</b> ${exercise.targetMuscles}</p>
+                                        <p><b>Equipment:</b> ${exercise.equipments}</p>
+                                        <p><b>Intructions:</b> ${exercise.instructions}</p>
+                                        <img src="${exercise.gifUrl}" alt="">`;
+
+            exercisesContainer.appendChild(exerciseElement);
+        });
 })
 .catch(error => {
     console.error(error);

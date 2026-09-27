@@ -3,6 +3,7 @@
 <!-- add team names -->
 ### Team Members:
 Thanush Dinesh
+Cole Becker
 
 #### Topic:
 We will be making a web application that allows users to view different exercxises and their details. The application will provide a list of exercises, and users can click on an exercise to view more information about it, such as the muscle groups it targets, equipment needed, instructions and visual images of it. Along with it we will have the option to filter the exercises based on muscle groups, equipment. Also we will have the ability to make a custom workout plan by saying what muscle groups you want to target and the application will generate a workout plan for you.
