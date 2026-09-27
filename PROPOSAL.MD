@@ -54,8 +54,6 @@ We will be using the following fields from the API response in our application:
 
 #### Comparators
 
-#### Comparators
-
 | App | Site | What it does |
 | --- | --- | --- |
 | MuscleWiki | https://musclewiki.com/ | An interactive site where you click a muscle group to see videos of exercises that target it. Its core library is free, but many features are behind a paid premium subscription. |
