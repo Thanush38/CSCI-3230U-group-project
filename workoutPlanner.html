@@ -1,14 +1,187 @@
 <!DOCTYPE>
 <html lang="en">
     <head>
+    <link rel="stylesheet" href="style.css" />
         <header>
-            <h1 id="Title">Workout Builder</h1>
-            <a "href=listing.html"></a>
+            <a class ="logo">
+                <img src="img\dumbbell.png" alt="Website Logo Name" width=75px> 
+                WorkOnSite
+            </a>
+
+            <nav>
+                <a "href=listing.html">Listing</a>
+                <a "href=homePage.html">Home Page</a>
+            </nav>
+            <!--Add the name of the website-->
         </header>
     </head>
-
     <body>
+        <h1 id="Title">Workout Builder</h1>
+        <h2 id = "Plan">My Workout Plan</h2>
+        <section class="Categories">
+            <section id="pre-build">
+            <p>
+            <form class="pre-buildInput">
+                <label for="pre-buildInput">Pre-build?</label>
+                                <select id="pre-buildInput" name="PreBuild Activity" type="text" required>
+                                    <option>
+                                    </option>
+                                    <option>
+                                    </option>
+                                    <option>   
+                                    </option>
+                                    <button type="submit">Add</button>
+                                </select>
+            <div id="links">
+                <h4>Table of Contents</h4>
+                <a href="#cardio-input">Cardio</a>
+                <a href="#strength-input">Strength</a>
+                <a href="#flexibilityInput">Flexibility</a>
+                <a href="#balance-input">Balance</a>
+                <a href="#workout-regime">Workout Regime</a>
+            </div>
+            </p>
+            </form>
+        </section> 
+        <section class="workout-input">
+            <h3 id="cardio-input">Cardio</h3>
+                <form >
+                    <p class="workout-layout">
+                        <label for="cardioInput">Cardio</label>
+                        <select  id="cardioInput" name="Cardio Activity">
+                            <option>
 
+                            </option>
+                            <option>
+
+                            </option>
+                            <option>
+                                
+                            </option>
+                        </select>
+                        <button type="submit">Add</button>
+                        <a class = "imgPlaceholder">
+                            <img src="img\workout-placeholder.svg" alt="Placeholder" width=75px> 
+                        </a>
+                    </p>
+                    <table>
+                    <tr>
+                        <td>Workout: </td>
+                        <td></td>
+                    </tr>
+                    </table>
+                        <button type="submit">Add</button>
+                        </form>
+        </section>
+        <section class="workout-input">
+        
+            <h3  id="strength-input">Strength</h3>
+                <form >
+                    <p class="workout-layout">
+                        <label for="strengthInput">Strength</label>
+                        <select id="strengthInput" name="Strength Activity" type="text" required>
+                            <option>
+                            </option>
+                            <option>
+                            </option>
+                            <option>   
+                            </option>
+                            <button type="submit">Add</button>
+                        </select>
+                        <button type="submit">Add</button>
+                        <a class = "imgPlaceholder">
+                            <img src="img\workout-placeholder.svg" alt="Placeholder" width=75px> 
+                        </a>
+                    </p>
+                    <table>
+                    <tr>
+                        <td>Workout: </td>
+                        <td></td>
+                    </tr>
+                    </table>
+                </form>
+        </section>
+        <section class="workout-input">
+                <h3 id="flexibilityInput">Flexibility</h3>
+                <form class="workout-input">
+                    <p class="workout-layout">
+                        
+                        <label for="flexibilityInput">Flexibility</label>
+                        <select id="flexibilitynput" name="Strength Activity" type="text" required>
+                            <option>
+                            </option>
+                            <option>
+                            </option>
+                            <option>   
+                            </option>
+                            </select>
+                         <button type="submit">Add</button>
+                         
+                        <a class = "imgPlaceholder">
+                                <img src="img\workout-placeholder.svg" alt="Placeholder" width=75px> 
+                        </a>
+                           
+                    </p>
+                    <table>
+                    <tr>
+                        <td>Workout: </td>
+                        <td></td>
+                    </tr>
+                </table>
+                </form>
+                
+        </section>
+        <section class="workout-input"> 
+                <h3 id="balance-input">Balance</h3>
+                <form class="workout-input">
+                    <p class="workout-layout">
+                        
+                        <label for="balanceInput">Balance</label>
+                        <select for="balanceInput">Balance</label>
+                            <option>
+                            </option>
+                            <option>
+                            </option>
+                            <option>   
+                            </option>
+                        </select>
+                          <button type="submit">Add</button>
+                           <a class="imgPlaceholder">
+                            <img src="img\workout-placeholder.svg" alt="Website Logo Name" width=75px> 
+                           </a>
+                       
+                    </p>
+                    <table>
+              
+                    <tr>
+                        <td>Workout: </td>
+                        <td></td>
+                    </tr>
+                    </table>
+                </form>
+        </section>  
+        <section class="workout-input">
+            <h3>Workout Regime</h2>
+            <form id="workout-regime">
+            <table>
+                  <thead>
+                        <th>
+                            Full Workout Regime
+                        </th>
+                    </thead>
+              
+                    <tr>
+                        <td>Workout: </td>
+                        <td>Total Work Outs</td>
+                    </tr>
+                    </table>      
+            <button>back</button>
+            </form>
+        </section>
+        
+        <h2 class="Results">Results</h2>
+        <p>Here we will insert a calculation formula to see how much calories were gained and lost</p>
     </body>
 
+    <footer id="copyright">Copyright &copy; 2026</footer>
 </html>

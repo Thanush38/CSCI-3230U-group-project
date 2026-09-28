@@ -60,5 +60,8 @@ This is the first milestone (m1) of your group project. By now you should have a
 
 > **AI policy:** this milestone allows AI for learning only - explanations, error messages, no AI-generated code. See `project/ai-policy.md`.
 =======
+
+> **References**
+https://www.freepnglogos.com/images/dumbbell-35672.html#user
 Proposal
 >>>>>>> 8673b329f22f78ca3974dd94c03127624d9bfdb3
