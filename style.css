@@ -57,14 +57,14 @@ section{
     margin:1rem; 
 }
 
-#pre-build{
+.pre-build{
      background:#f4f6f8;
     border-radius:12px;
     padding:0rem;
     margin-left:1rem;   
 }
 
-#pre-build label, div{
+.pre-build label, div{
     margin-left:1rem;
     font-size:22;
 }
