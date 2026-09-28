@@ -155,3 +155,19 @@ button:hover {
         background: #dcdcdc;
     }
 }
+
+.muscle-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.exercise-info span {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.muscle-group img {
+    width: 300px;
+    height: 300px;
+}
