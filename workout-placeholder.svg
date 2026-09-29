@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Workout placeholder">
+    <rect width="400" height="240" fill="#e0e7ff"/>
+    <g fill="#2563eb">
+        <rect x="70" y="95" width="24" height="50" rx="4"/>
+        <rect x="98" y="80" width="26" height="80" rx="4"/>
+        <rect x="124" y="112" width="152" height="16" rx="4"/>
+        <rect x="276" y="80" width="26" height="80" rx="4"/>
+        <rect x="306" y="95" width="24" height="50" rx="4"/>
+    </g>
+    <text x="200" y="200" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1d4ed8">Workout Image</text>
+</svg>
