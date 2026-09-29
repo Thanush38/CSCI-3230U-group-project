@@ -93,6 +93,16 @@ header{
     font-size:22;
 }
 
+input,
+select {
+    padding: 8px 10px;
+    margin-left:10px;
+    font: inherit;
+    border: 1px solid #d9e0e7;
+    border-radius: 6px;
+    background: #ffffff;
+}
+
 button {
     padding: 2px 16px;
     font: inherit;
@@ -103,6 +113,11 @@ button {
     border-radius: 6px;
     cursor: pointer;
 }
+
+.submitButton{
+    margin-left:3rem;
+}
+
 
 h1{
     color:#1f2933;
@@ -124,6 +139,11 @@ header a:hover{
 }
 
 
+h2{
+    margin-left:30px;
+    font-size:30px;
+}
+
 #pre-build label:hover{
     font-size:20px;
 }
@@ -132,14 +152,6 @@ header a:hover{
     font-size:20px;
 }
 
-.workout-input label:hover{
-    filter: brightness(120%);
-}
-
-h2{
-    margin-left:30px;
-    font-size:30px;
-}
 
 
 .workout-layout{
@@ -159,22 +171,8 @@ h2{
     font-size:40px;
 }
 
-.workout-input table{
-    border-collapse: collapse;
-    border-spacing:0px;
-}
-
-.workout-input thead{
-    font-family: 'Courier New', Courier, monospace;
-    font-size:20px;
-    text-align:center;
-}
-.workout-input td{
-    font-family: 'Courier New', Courier, monospace;
-    font-size:20px;
-    text-align:left;
-    padding:2px;
-    border:1px solid #1f2933;
+.workout-input label:hover{
+    filter: brightness(120%);
 }
 
 #Title{
@@ -185,9 +183,8 @@ h2{
 }
 
 
-.workout-input form{
+.workout-input form table, form label{
     margin-left: 3rem;
-
 }
 
 .displayer{
@@ -196,4 +193,41 @@ h2{
 
 .workout-input h3{
     margin-left:2rem;
+}
+
+.workout-input table{
+    border-collapse: seperate;
+    border-spacing:0px;
+    border-radius:12px;
+    overflow: hidden;
+    border: 1px solid #d9e0e7;
+    margin-bottom:5px;
+}
+
+.workout-input thead{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:20px;
+    text-align:center;
+    background-color: #ffffff;
+}
+.workout-input td{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:20px;
+    text-align:left;
+    padding:8px 5px;
+    border-bottom:1px solid #d9e0e7;
+    border-right:1px solid #d9e0e7;
+}
+
+.tableForm{
+    display:block;
+    margin:0;
+}
+
+.tableForm input, td input{
+    margin-left:0;
+}
+
+.workout-regime{
+    margin-left:3rem;
 }
