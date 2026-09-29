@@ -219,21 +219,13 @@ h2{
     border-right:1px solid #d9e0e7;
 }
 
-/* 2. Reset the form wrapper */
-.tableForm {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+.tableForm{
+    display:block;
+    margin:0;
 }
 
-/* 3. Force the input element to sit on the far left */
-.tableForm input,
-td input {
-  display: block;
-  margin-left: 0;
-  margin-right: auto;
-  float: left;
+.tableForm input, td input{
+    margin-left:0;
 }
 
 .workout-regime{
