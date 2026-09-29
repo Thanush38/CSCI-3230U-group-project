@@ -114,6 +114,11 @@ button {
     cursor: pointer;
 }
 
+.submitButton{
+    margin-left:3rem;
+}
+
+
 h1{
     color:#1f2933;
     font-size:35;
@@ -178,9 +183,8 @@ h2{
 }
 
 
-.workout-input form{
+.workout-input form table, form label{
     margin-left: 3rem;
-
 }
 
 .displayer{
@@ -210,8 +214,28 @@ h2{
     font-family: 'Courier New', Courier, monospace;
     font-size:20px;
     text-align:left;
-    padding:8px 12px;
+    padding:8px 5px;
     border-bottom:1px solid #d9e0e7;
     border-right:1px solid #d9e0e7;
 }
 
+/* 2. Reset the form wrapper */
+.tableForm {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Force the input element to sit on the far left */
+.tableForm input,
+td input {
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  float: left;
+}
+
+.workout-regime{
+    margin-left:3rem;
+}
