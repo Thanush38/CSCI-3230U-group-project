@@ -58,3 +58,9 @@ This is the first milestone (m1) of your group project. By now you should have a
 | **Presentation** - clear, all members participate | 2% |
 
 > **AI policy:** this milestone allows AI for learning only - explanations, error messages, no AI-generated code. See `project/ai-policy.md`.
+
+> **References**
+., J. D. (n.d.). Dumbbell clipart etsy #35672 - Free Transparent PNG Logos. Free PNG Logos. Retrieved September 28, 2026, from https://www.freepnglogos.com/images/dumbbell-35672.html#user
+
+Proposal
+=======
