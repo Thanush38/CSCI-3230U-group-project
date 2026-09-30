@@ -1,39 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recommended Builds</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recommended Builds</title>
-    <link rel="stylesheet" href="style.css">
+    <body>
+        <header>
+            <a class="logo" href="homePage.html">
+                <img src="img/dumbbell.png" alt="WorkOnSite logo">
+                WorkOnSite
+            </a>
+            <h1>Recommended Builds</h1>
+            <nav>
+                <a href="homePage.html">Home</a>
+                <a href="workoutPlanner.html">Workout Planner</a>
+                <a href="recommendedBuilds.html">Recommended Builds</a>
+                <a href="workoutTimer.html">Workout Timer</a>
+            </nav>
+        </header>
 
-</head>
+        <main>
+            <section id="goal-section">
+                <h2>Choose Your Goal</h2>
+                <form>
+                    <div>
+                        <label for="goal">Goal</label>
+                        <select id="goal" name="goal">
+                            <option value="calisthenics">Calisthenics</option>
+                            <option value="back" selected>Bigger Back</option>
+                            <option value="chest">Bigger Chest</option>
+                            <option value="pullup">First Pull-Up</option>
+                        </select>
+                    </div>
 
+                    <div>
+                        <label for="level">Experience Level</label>
+                        <select id="level" name="level">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
 
+                    <button type="submit">Get Recommendation</button>
+                </form>
+            </section>
 
-<body>
-    <header>
-        <h1>Recommended Builds</h1>
-        <nav>
-            <a href="homePage.html">Home</a>
-            <a href="workoutPlanner.html">Workout Planner</a>
-        </nav>
-    </header>
-    <main>
-        <section id="builds">
-            <button> Generate Recommended Builds</button>
-        </section>
-        <hr>
-        <section id="feedback">
-            <h2>Feedback</h2>
-            <p>Based on your current workout programs, these are the areas you're neglecting</p>
-            <ul>
-                <li>legs</li>
-                <li>back</li>
-                <li>chest</li>
-            </ul>
-        </section>
-    </main>
-</body>
+            <section id="build" class="build">
+                <h2>Your Build: Bigger Back</h2>
+                <p>
+                    Pull-ups and rows train your lats and upper back from two directions, vertical and horizontal pulling.
+                    Deadlifts add overall back thickness, and planks keep your core strong enough to hold good form.
+                </p>
 
+                <table>
+                    <caption>Recommended exercises for a bigger back</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Exercise</th>
+                            <th scope="col">Sets</th>
+                            <th scope="col">Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="TempHardCode/pullup.html">Pull-Up</a></td>
+                            <td>4</td>
+                            <td>6–8</td>
+                        </tr>
+                        <tr>
+                            <td><a href="TempHardCode/bentoverrow.html">Bent-Over Row</a></td>
+                            <td>4</td>
+                            <td>8–10</td>
+                        </tr>
+                        <tr>
+                            <td><a href="TempHardCode/deadlift.html">Deadlift</a></td>
+                            <td>3</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td><a href="TempHardCode/plank.html">Plank</a></td>
+                            <td>3</td>
+                            <td>45 sec</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a class="button" href="workoutPlanner.html">Apply to Workout Planner</a>
+            </section>
+
+            <section id="other-builds" class="exercise-grid">
+                <h2>Other Builds</h2>
+
+                <article class="card">
+                    <h3>Calisthenics</h3>
+                    <p>Push-Up, Pull-Up, Tricep Dips, Plank</p>
+                    <p>Build strength and control using only your bodyweight.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Bigger Chest</h3>
+                    <p>Bench Press, Push-Up, Tricep Dips</p>
+                    <p>Heavy pressing plus high-rep push-ups to grow the chest.</p>
+                </article>
+
+                <article class="card">
+                    <h3>First Pull-Up</h3>
+                    <p>Bent-Over Row, Plank, Pull-Up</p>
+                    <p>Strengthen your back and core until you can pull your chin over the bar.</p>
+                </article>
+            </section>
+
+            <section id="feedback" class="build">
+                <h2>Feedback</h2>
+                <p>Based on your saved workout plans, these are the areas you're neglecting:</p>
+                <ul>
+                    <li><strong>Legs</strong> – no leg exercises this week. Try adding <a href="TempHardCode/bodyweightsquat.html">Bodyweight Squats</a>.</li>
+                    <li><strong>Shoulders</strong> – only 1 set this week. Try adding <a href="TempHardCode/overheadpress.html">Overhead Press</a>.</li>
+                    <li><strong>Core</strong> – nothing since last week. Try adding a <a href="TempHardCode/plank.html">Plank</a>.</li>
+                </ul>
+            </section>
+        </main>
+    </body>
 </html>
