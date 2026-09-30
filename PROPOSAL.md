@@ -1,11 +1,11 @@
 # CSCI 3230U - Final Project
 
-<!-- add team names -->
+
 ### Team Members:
-Thanush Dinesh
-Cole Becker
-Nabeel Khan
-Kharintirasakar
+- Thanush Dinesh
+- Cole Becker
+- Nabeel Khan
+- Kharintirasakar
 
 #### Topic:
 We will be making a web application that allows users to view different exercises and their details. The application will provide a list of exercises, and users can click on an exercise to view more information about it, such as the muscle groups it targets, equipment needed, instructions and visual images of it. This is for new gym beginners that are unsure what exercise hits what muscle and to give detailed images and instructions on how to perform it. Along with it we will have the option to filter the exercises based on muscle groups, equipment. Users can also build their own workout plan in the planner, or pick a goal on the recommended page and have the application generate a plan for them. Once they have a plan, the workout timer walks them through it with a countdown for each exercise and rest breaks in between.
