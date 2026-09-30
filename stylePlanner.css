@@ -1,233 +1,162 @@
-*{
-    box-sizing: border-box;
-}
+/* Planner-specific styles. Loaded after style.css so the header, nav,
+   buttons and inputs match the homepage. */
 
-:root{
-    --color-hover:#EEAA7B;
-    --color-text:#1f2933;
-    --color-background:#313436;
-}
-#links a{
-    display:block;
-    color:#1f2933;
-    font-size:20;
-    margin-left:3rem;
-}
-
-#links h4{
-    margin:30px;
-    margin-left:1rem;
-}
-
-#links a:hover{
-    margin-left:orange;
-}
-body{
-    margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: #f4f6f8;
-    color: #1f2933;
-    line-height: 1.5;
-}
-
-header{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 16px 24px;
-    background: #ffffff;
-    border-bottom: 1px solid #1f2933;
-}
-
-#copyright{
-    text-align: right;
-}
-
-.logo{
-    display:flex;
-    font-size:30px;
-    font-weight: bold;
-    align-items: center;
-    padding:5px;
-    justify-content: center;
-    gap: 20px;
-}
-
-.workout-input{
-    
-    margin:1rem; 
-    gap: 12px 16px;
+/* Each section is a card, like the homepage exercise cards */
+.workout-input {
+    margin-bottom: 20px;
     padding: 16px;
     background: #ffffff;
     border: 1px solid #d9e0e7;
     border-radius: 8px;
 }
 
-.Categories{
-    background:#f4f6f8;
-    border-radius:12px;
-    padding:0.5rem;
-    border:1px solid #1f2933;
-    margin:1rem; 
+.workout-input h2,
+.workout-input h3 {
+    margin: 0 0 12px;
 }
 
-
-.Categories{
-    background:#f4f6f8;
-    border-radius:12px;
-    padding:0.5rem;
-    border:1px solid #1f2933;
-    margin:1rem; 
-}
-
-.pre-build{
-    border-radius:12px;
-    padding:0rem;
-    margin: left -1rem;   
-    
-}
-
-.pre-build label, div{
-    font-size:22;
-}
-
-input,
-select {
-    padding: 8px 10px;
-    margin-left:10px;
-    font: inherit;
-    border: 1px solid #d9e0e7;
-    border-radius: 6px;
-    background: #ffffff;
-}
-
-button {
-    padding: 2px 16px;
-    font: inherit;
-    font-weight: 300;
-    color: #fff;
-    background: #2563eb;
+/* Forms inside a card shouldn't be drawn as a second box */
+.workout-input form {
+    display: block;
+    padding: 0;
+    background: none;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    border-radius: 0;
 }
 
-.submitButton{
-    margin-left:3rem;
+.workout-input p {
+    color: #616e7c;
 }
 
-
-h1{
-    color:#1f2933;
-    font-size:35;
-    margin:30px;
+/* Pre-build / recommended pickers */
+.pre-build form {
     display: flex;
     flex-wrap: wrap;
-    align-items: end;
-}
-
-header a{
-    color:#1f2933;
-    font-size:20;
-}
-
-
-header a:hover{
-    color:orange;
-}
-
-
-h2{
-    margin-left:30px;
-    font-size:30px;
-}
-
-#pre-build label:hover{
-    font-size:20px;
-}
-
-.workout-input label{
-    font-size:20px;
-}
-
-
-
-.workout-layout{
-    display:flex;
     align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
-.imgPlaceholder{
-    display:flex;
-    margin-left:auto;
-
-}
-
-
-.workout-input h3{
-    font-family: 'Courier New', Courier, monospace;
-    font-size:40px;
-}
-
-.workout-input label:hover{
-    filter: brightness(120%);
-}
-
-#Title{
+.pre-build form label,
+.workout-layout label {
+    margin: 0;
+    font-size: 1rem;
     color: #1f2933;
-    text-align:center;
-    padding:2px;
-    text-align: center;
 }
 
-
-.workout-input form table, form label{
-    margin-left: 3rem;
-}
-
-.displayer{
+.workout-layout {
     display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.workout-input h3{
-    margin-left:2rem;
+/* Table of contents */
+#links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 16px;
 }
 
-.workout-input table{
-    border-collapse: seperate;
-    border-spacing:0px;
-    border-radius:12px;
-    overflow: hidden;
+#links h2 {
+    flex-basis: 100%;
+    margin: 16px 0 0;
+    font-size: 1rem;
+}
+
+#links a {
+    color: #616e7c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#links a:hover {
+    color: #2563eb;
+}
+
+/* Tables */
+.workout-input table {
+    width: 100%;
+    margin-bottom: 12px;
+    border-collapse: separate;
+    border-spacing: 0;
     border: 1px solid #d9e0e7;
-    margin-bottom:5px;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.workout-input thead{
-    font-family: 'Courier New', Courier, monospace;
-    font-size:20px;
-    text-align:center;
-    background-color: #ffffff;
-}
-.workout-input td{
-    font-family: 'Courier New', Courier, monospace;
-    font-size:20px;
-    text-align:left;
-    padding:8px 5px;
-    border-bottom:1px solid #d9e0e7;
-    border-right:1px solid #d9e0e7;
+.workout-input th,
+.workout-input td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid #d9e0e7;
 }
 
-.tableForm{
-    display:block;
-    margin:0;
+.workout-input tr:last-child td {
+    border-bottom: none;
 }
 
-.tableForm input, td input{
-    margin-left:0;
+.workout-input th {
+    background: #f4f6f8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #616e7c;
 }
 
-.workout-regime{
-    margin-left:3rem;
+.workout-input td input {
+    width: 100%;
+}
+
+.imgPlaceholder {
+    display: block;
+    width: 120px;
+    height: auto;
+    margin-left: auto;
+    border-radius: 6px;
+}
+
+.workout-input td label {
+    display: inline;
+    margin: 0;
+    font-size: 1rem;
+    color: #1f2933;
+}
+
+.regime-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.regime-actions label {
+    display: inline;
+    margin: 0;
+    font-size: 1rem;
+    color: #1f2933;
+}
+
+#copyright {
+    padding: 16px 24px;
+    text-align: right;
+    color: #616e7c;
+    font-size: 0.85rem;
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .pre-build form,
+    .workout-layout {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .workout-input th,
+    .workout-input td {
+        padding: 6px;
+    }
+
+    .imgPlaceholder {
+        display: none;
+    }
 }
