@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Workout Timer</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <a class="logo" href="homePage.html">
+                <img src="img/dumbbell.png" alt="WorkOnSite logo">
+                WorkOnSite
+            </a>
+            <h1>Workout Timer</h1>
+            <nav>
+                <a href="homePage.html">Home</a>
+                <a href="workoutPlanner.html">Workout Planner</a>
+                <a href="recommendedBuilds.html">Recommended Builds</a>
+                <a href="workoutTimer.html">Workout Timer</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="choose-workout">
+                <h2>Choose a Workout</h2>
+                <div class="workout-choices">
+                    <button type="button" class="choice selected" aria-pressed="true">Push Day</button>
+                    <button type="button" class="choice" aria-pressed="false">Full Body Day</button>
+                </div>
+            </section>
+
+            <section id="timer" class="timer">
+                <h2>Push-Up</h2>
+                <p class="timer-set">Set 2 of 3 · Work</p>
+
+                <div class="timer-body">
+                    <img src="workout-placeholder.svg" alt="Push-Up demonstration">
+
+                    <svg class="timer-ring" viewBox="0 0 200 200" role="img" aria-label="45 seconds remaining">
+                        <circle class="ring-track" cx="100" cy="100" r="90"></circle>
+                        <circle class="ring-progress" cx="100" cy="100" r="90"></circle>
+                        <text x="100" y="112" text-anchor="middle">0:45</text>
+                    </svg>
+                </div>
+
+                <p class="timer-next">Next: 30 sec rest, then Bench Press</p>
+
+                <div class="timer-controls">
+                    <button type="button">Pause</button>
+                    <button type="button">Skip</button>
+                    <button type="button" class="stop">Stop</button>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

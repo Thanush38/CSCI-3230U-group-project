@@ -8,7 +8,7 @@ Nabeel Khan
 Kharintirasakar
 
 #### Topic:
-We will be making a web application that allows users to view different exercises and their details. The application will provide a list of exercises, and users can click on an exercise to view more information about it, such as the muscle groups it targets, equipment needed, instructions and visual images of it. This is for new gym beginners that are unsure what exercise hits what muscle and to give detailed images and instructions on how to perform it. Along with it we will have the option to filter the exercises based on muscle groups, equipment. Also we will have the ability to make a custom workout plan by saying what muscle groups you want to target and the application will generate a workout plan for you.
+We will be making a web application that allows users to view different exercises and their details. The application will provide a list of exercises, and users can click on an exercise to view more information about it, such as the muscle groups it targets, equipment needed, instructions and visual images of it. This is for new gym beginners that are unsure what exercise hits what muscle and to give detailed images and instructions on how to perform it. Along with it we will have the option to filter the exercises based on muscle groups, equipment. Users can also build their own workout plan in the planner, or pick a goal on the recommended page and have the application generate a plan for them. Once they have a plan, the workout timer walks them through it with a countdown for each exercise and rest breaks in between.
 
 #### Data Source:
 
@@ -51,7 +51,7 @@ We will be using the following fields from the API response in our application:
 | `gifUrl` | Visual demonstration on the detail page and card thumbnails |
 | `targetMuscles` | Detail page, muscle group filter, workout plan generator |
 | `secondaryMuscles` | Detail page ("also works") |
-| `bodyParts` | Filtering and grouping exercises for workout plans |
+| `bodyParts` | Body-part filter on the list page and grouping exercises for workout plans |
 | `equipments` | Detail page and equipment filter |
 | `instructions` | Step-by-step list on the detail page |
 
@@ -63,7 +63,7 @@ We will be using the following fields from the API response in our application:
 | ExRx.net | https://exrx.net/ | A reference site with over 2,100 exercises organized by muscle group and the equipment you have available. |
 | Muscle & Strength | https://www.muscleandstrength.com/ | A reference site where you can browse exercises and instructions for each muscle group, along with pre written workout programs. |
 
-Our site is completely free, with no subscriptions or paid features. On top of letting users target the muscles they want, it also tells them which parts of their body they are neglecting, based on the workouts it creates for them. Users can also pick a physique or fitness goal, such as calisthenics, a bigger back, a bigger chest, or a pull-up target, and follow a plan built to reach it. None of these sites combines a workout builder with this kind of goal-based, personalized guidance.
+Our site is completely free, with no subscriptions or paid features. On top of letting users target the muscles they want, it also tells them which parts of their body they are neglecting, based on the workouts it creates for them. Users can also pick a physique or fitness goal, such as calisthenics, a bigger back, a bigger chest, or a pull-up target, and follow a plan built to reach it. When it is time to train, a built-in workout timer guides them through the plan one exercise at a time. None of these sites combines a workout builder, goal-based personalized guidance and a guided workout timer in one place.
 
 #### Scaled Feature Plan:
 
@@ -74,28 +74,50 @@ These are the shared foundation of the app. Each one has an owner.
 | Baseline feature | How it appears in our app | Owner |
 | --- | --- | --- |
 | React + Vite setup, app shell (header, nav, layout) | Shared layout used by every page | Thanush |
-| Multiple routes with client-side routing | `/`, `/exercises`, `/exercises/:id`, `/planner`, `/recommended` | Thanush |
-| Collection loaded from a web service | Exercises fetched from ExerciseDB and mapped to our own shape at the boundary | Nabeel |
-| Mock data for early development | In-repo JSON of sample exercises used before the live API (M2) | Cole |
+| Multiple routes with client-side routing | `/`, `/exercises`, `/exercises/:id`, `/planner`, `/recommended`, `/timer` | Thanush |
+| Collection loaded from a web service | Shared data layer that fetches exercises from ExerciseDB and maps them to our own shape at the boundary | Everyone |
 | Cards / list view | Exercise cards showing name, GIF, target muscle and equipment | Cole |
-| Loading, error and empty states | Spinner while loading, a message if the API fails, and "No exercises found" for empty results | Kharintirasakar |
-| Search, filter and sort | Search by name, filter by muscle group and equipment, sort A–Z / Z–A or by muscle group | Cole |
+| Loading, error and empty states | Each page shows a spinner while loading, a message if the API fails, and "No exercises found" for empty results | Everyone (each on their own page) |
+| Search | Search exercises by name or muscle group from the home page and the list page | Cole |
+| Filter and sort | Filter by muscle group, equipment and body part; sort A–Z / Z–A or by muscle group | Cole |
 | Detail view with URL params | `/exercises/:id` uses `exerciseId` to show target and secondary muscles, equipment, GIF and step-by-step instructions | Cole |
-| Persisted user state (localStorage) | Favourite exercises saved with a custom hook + `localStorage` | Nabeel |
+| Persisted user state (localStorage) | Saved goal and saved workout builds, stored with a custom hook + `localStorage` | Nabeel |
 | Controlled form | Workout planner form (exercise, sets, time) controlled by React state | Kharintirasakar |
 | Accessible and responsive | Semantic HTML, labelled controls, alt text, keyboard navigation, AA contrast, layouts that work on phones | Everyone |
-| Automated tests | Tests for filter/sort logic and key components | Everyone |
-| Deployed to a public URL | Hosted on Netlify | Cole |
+| Automated tests | Tests for each person's own logic and components | Everyone |
+| Deployed to a public URL | Hosted on Netlify | Everyone |
 
 ##### Vertical slices
 
-Kharintirasakar: Will be responsible for making the workout planner, this website will use drop down menus and tables to list activities planned as well as having prebuilt workouts for one to use. After that once JavaScript is used results will be displayed using calculations for calories gained and lost (a stretch goal, since the API does not provide calorie data, so this would be our own estimate). Javascript may be used if time permits to make a graph about this. Furthermore if time permits there may be recommended workouts based on which section is believed to be the most missing. This will overall be where the user plans their workouts and the time needed to complete them. Buttons will also be added to ensure that the selected components will be added as well as an undo button. Currently the planned route will be `/planner`.
+Each member owns one page of the app and everything related to it: its components, state, data, route, tests and accessibility.
 
-Cole: Will be responsible for making the list of workouts that are provided in the website, with JavaScript these will be used to help make the workout planner suggestions in the dropdown menu. They also serve to inform the user of the best workouts to improve on in desired areas. This will also include a search bar to find which workouts to do as well as detailed descriptions about each workout. Images will be provided to help the user better understand the workouts. A learn more button may possibly be included for each section so that when pressed a pop up will be shown to display more detailed information as well as recommended times for the workout. Currently the planned route will be `/exercises`.
+**Cole: Home page, exercise list and detail (`/`, `/exercises`, `/exercises/:id`)**
+- **Home page:** A hero section, a search bar, muscle-group quick links and quick links to famous workout routines (e.g. Push/Pull/Legs, Upper/Lower). The famous routines are our own hard-coded data, since the API does not provide routines.
+- **Search:** A search component that matches exercises by name or muscle group. It is used on the home page and on the list page. Searching from the home page takes the user to `/exercises?search=...` so results show up in the list.
+- **List page:** A grid of exercise cards (name, GIF, target muscle, equipment) with filter controls for muscle group, equipment and body part, and a sort dropdown (A–Z, Z–A, by muscle group). Clicking a card opens the exercise's detail page.
+- **Detail page:** `/exercises/:id` reads `exerciseId` from the URL and fetches that exercise. It shows the GIF, target and secondary muscles, equipment and numbered step-by-step instructions.
+- **State / data:** Search text, filter and sort choices are kept in React state, with the search synced to the URL query string. Data comes from `GET /exercises` and `GET /exercises/{exerciseId}`.
+- **Tests / a11y:** Tests for the search, filter and sort logic and the card component. The GIFs have alt text, the search and filters are labelled, and the cards can be reached with the keyboard.
 
-Thanush: Will be responsible for making the homepage. This will include a much more broad and general list of workouts as well as a search bar for muscle groups. A dropdown menu will also help search for the website. It will also have a search bar for muscle groups that are benefited by the workout. This will also have quick links to famous workout routines that will be used by the website planner. General UI features and decorations will mainly be in the home page where it can navigate and help the user better understand the website as well as its functionality. Additionally if time permits, JavaScript may be used to allow the user to click the exercise and go to listing to get the more detailed version. Currently the planned route will be `/`.
+**Nabeel: Recommended builds (`/recommended`)**
+- **UI:** The user picks a physique or fitness goal (e.g. calisthenics, bigger back, bigger chest, pull-up target) and gets a generated workout build, with a short explanation of why each exercise fits the goal.
+- **State / data:** The generated build uses exercises from the API chosen by their target muscles and body parts. The goal descriptions and explanations are our own written content. A custom hook saves the chosen goal and builds to `localStorage`.
+- **Integration:** An "Apply to planner" button sends a build to the workout planner.
+- **Tests / a11y:** Tests for the build generator and the `localStorage` hook. Goal options are labelled controls, and the results are announced to screen readers.
 
-Nabeel: Will be responsible for making the recommended workout page. This will be used by the workout planner for builds to suggest. It will include inputs from the user for their main focus and give workouts as well as a paragraph as to why the workout is the best for them. It will also use previous workout pages to see how to adapt this to ensure optimal performance by the user. This can include a generated goal using a button to apply this to the workout planner. There will also be feedback in this part using the data we had. Currently the planned route will be `/recommended`.
+**Kharintirasakar: Workout planner (`/planner`)**
+- **UI:** A controlled form with dropdowns to add exercises with sets and time. There is a table of the planned workout, add and undo buttons, and prebuilt workouts to start from.
+- **Neglected muscles:** Based on the planned workout, the planner shows which muscle groups are not being trained, so users can see what they are missing.
+- **State / data:** The plan is kept in React state. Exercises for the dropdowns come from the API, and saved or applied builds come from the recommended page.
+- **Stretch goals:** Estimated calories burned (the API has no calorie data, so this would be our own estimate) and a chart of the plan.
+- **Integration:** A "Start workout" button sends the plan to the workout timer.
+- **Tests / a11y:** Tests for the plan logic (add, undo, neglected-muscle check) and the form. Every input is labelled, and the table uses proper headers.
+
+**Thanush: Workout timer (`/timer`) and app shell**
+- **UI:** The user picks a workout at the top, either their plan from the planner or a popular preset (e.g. Push Day, Full Body). Below it, a circular countdown timer shows the current exercise and its time left, then switches to a rest break before the next exercise. Pause, resume, skip and stop buttons let the user control the workout or end it early, and an "Up next" line shows the following exercise.
+- **State / data:** The timer's state (current exercise, time left, work or rest, paused) is managed with `useReducer`, and a `useEffect` interval handles the countdown. Workouts come from the planner or from our own hard-coded presets. Exercise names and GIFs come from the API.
+- **App shell / routing:** The shared header, nav and layout used by every page, and client-side routing for all six routes.
+- **Tests / a11y:** Tests for the timer logic (countdown, switching to rest, pause, skip, finishing). The time left is announced through an `aria-live` region, every control is a labelled button that works with the keyboard, and the progress ring has a text alternative.
 
 All vertical slices will use the same API: **Base URL:** `https://oss.exercisedb.dev/api/v1` 
 
@@ -112,3 +134,7 @@ All vertical slices will use the same API: **Base URL:** `https://oss.exercisedb
 **Workout Planner**
 
 ![Workout planner wireframe](img/WorkoutPlanner.png)
+
+**Workout Timer**
+
+![Workout timer wireframe](img/WorkoutTimer.jpg)
