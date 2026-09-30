@@ -93,31 +93,31 @@ Each member owns one page of the app and everything related to it: its component
 
 **Cole: Home page, exercise list and detail (`/`, `/exercises`, `/exercises/:id`)**
 - **Home page:** A hero section, a search bar, muscle-group quick links and quick links to famous workout routines (e.g. Push/Pull/Legs, Upper/Lower). The famous routines are our own hard-coded data, since the API does not provide routines.
-- **Search:** A search component that matches exercises by name or muscle group. It is used on the home page and on the list page. Searching from the home page takes the user to `/exercises?search=...` so results show up in the list.
+- **Search:** A search component that matches exercises by name or muscle group. It is used on the home page and on the list page. Searching from the home page takes the user to a page with results
 - **List page:** A grid of exercise cards (name, GIF, target muscle, equipment) with filter controls for muscle group, equipment and body part, and a sort dropdown (A–Z, Z–A, by muscle group). Clicking a card opens the exercise's detail page.
-- **Detail page:** `/exercises/:id` reads `exerciseId` from the URL and fetches that exercise. It shows the GIF, target and secondary muscles, equipment and numbered step-by-step instructions.
-- **State / data:** Search text, filter and sort choices are kept in React state, with the search synced to the URL query string. Data comes from `GET /exercises` and `GET /exercises/{exerciseId}`.
-- **Tests / a11y:** Tests for the search, filter and sort logic and the card component. The GIFs have alt text, the search and filters are labelled, and the cards can be reached with the keyboard.
+- **Detail page:** gets the exercise Id and fetches that exercise details. It shows the GIF, target and secondary muscles, equipment and numbered step-by-step instructions.
+- **State / data:** Search text, filter and sort choices are kept in React state, with the search synced to the URL query string. 
+- **Tests / accessibility:** Tests for the search, filter and sort logic and the card component. The GIFs have alt text, the search and filters are labelled, and the cards can be reached with the keyboard.
 
 **Nabeel: Recommended builds (`/recommended`)**
 - **UI:** The user picks a physique or fitness goal (e.g. calisthenics, bigger back, bigger chest, pull-up target) and gets a generated workout build, with a short explanation of why each exercise fits the goal.
 - **State / data:** The generated build uses exercises from the API chosen by their target muscles and body parts. The goal descriptions and explanations are our own written content. A custom hook saves the chosen goal and builds to `localStorage`.
 - **Integration:** An "Apply to planner" button sends a build to the workout planner.
-- **Tests / a11y:** Tests for the build generator and the `localStorage` hook. Goal options are labelled controls, and the results are announced to screen readers.
+- **Tests / accessibility:** Tests for the build generator and the `localStorage` hook. Goal options are labelled controls, and the results are announced to screen readers.
 
 **Kharintirasakar: Workout planner (`/planner`)**
 - **UI:** A controlled form with dropdowns to add exercises with sets and time. There is a table of the planned workout, add and undo buttons, and prebuilt workouts to start from.
 - **Neglected muscles:** Based on the planned workout, the planner shows which muscle groups are not being trained, so users can see what they are missing.
 - **State / data:** The plan is kept in React state. Exercises for the dropdowns come from the API, and saved or applied builds come from the recommended page.
-- **Stretch goals:** Estimated calories burned (the API has no calorie data, so this would be our own estimate) and a chart of the plan.
+- **Stretch goals:** Estimated calories burned and a chart of the plan.
 - **Integration:** A "Start workout" button sends the plan to the workout timer.
-- **Tests / a11y:** Tests for the plan logic (add, undo, neglected-muscle check) and the form. Every input is labelled, and the table uses proper headers.
+- **Tests / accessibility:** Tests for the plan logic (add, undo, neglected-muscle check) and the form. Every input is labelled, and the table uses proper headers.
 
 **Thanush: Workout timer (`/timer`) and app shell**
 - **UI:** The user picks a workout at the top, either their plan from the planner or a popular preset (e.g. Push Day, Full Body). Below it, a circular countdown timer shows the current exercise and its time left, then switches to a rest break before the next exercise. Pause, resume, skip and stop buttons let the user control the workout or end it early, and an "Up next" line shows the following exercise.
-- **State / data:** The timer's state (current exercise, time left, work or rest, paused) is managed with `useReducer`, and a `useEffect` interval handles the countdown. Workouts come from the planner or from our own hard-coded presets. Exercise names and GIFs come from the API.
+- **State / data:** The timer's state (current exercise, time left, work or rest, paused) is managed efficiently with a reducer. The workout builds come from the planner or the recommended page.
 - **App shell / routing:** The shared header, nav and layout used by every page, and client-side routing for all six routes.
-- **Tests / a11y:** Tests for the timer logic (countdown, switching to rest, pause, skip, finishing). The time left is announced through an `aria-live` region, every control is a labelled button that works with the keyboard, and the progress ring has a text alternative.
+- **Tests / accessibility:** Tests for the timer logic (countdown, switching to rest, pause, skip, finishing).
 
 All vertical slices will use the same API: **Base URL:** `https://oss.exercisedb.dev/api/v1` 
 
