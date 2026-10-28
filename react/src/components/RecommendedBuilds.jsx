@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { builds } from "../data/builds";
+import BuildTable from "./BuildTable";
 
 function RecommendedBuilds() {
   const [selectedId, setSelectedId] = useState("back");
@@ -28,7 +29,7 @@ function RecommendedBuilds() {
         <h2>Your Build: {selectedBuild.name}</h2>
         <p>{selectedBuild.explanation}</p>
 
-        <p>(Table coming soon)</p>
+        <BuildTable exercises={selectedBuild.exercises} />
       </section>
     </main>
   );
